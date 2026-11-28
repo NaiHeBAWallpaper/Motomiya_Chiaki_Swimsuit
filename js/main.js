@@ -49,7 +49,8 @@ const subtitleLocales = {
 	Chinese: 'zh-Hans',
 	TraditionalChinese: 'zh-Hant',
 	Japanese: 'ja',
-	Korean: 'ko'
+	Korean: 'ko',
+	Thai: 'th'
 };
 let isVoicelinePlaying = false;
 
@@ -68,9 +69,9 @@ const AUDIO_DETAIL = [
                 "ふっふ～ん！スクープがなければ作ればいいんです！"
             ],
             English: [
-                "Fufu! Caught you off guard! Perfect photo op!",
-                "Aha! Curled up like that, Sensei... This framing is just right for the cover page!",
-                "Fuhfuhn~! If there are no scoops, you just have to manufacture one!"
+                "Fufu! An opening! The perfect shot!",
+                "Ahaha! Sensei, curled up so small like that... This is a perfect shot for the cover!",
+                "Heehee! If there's no scoop, I'll just make one!"
             ],
             Chinese: [
                 "呼呼！破绽！快门时机！",
@@ -78,15 +79,16 @@ const AUDIO_DETAIL = [
                 "呼～哼！没有独家新闻的话，制造出来就行了！"
             ],
             TraditionalChinese: [
-                "呼呼！破綻！快門時機！",
-                "啊哈！老師，縮成一團了呢……這構圖簡直太適合做封面了！",
-                "呼～哼！沒有獨家新聞的話，製造出來就行了！"
+                "呵呵！有破綻！快門時機！",
+                "啊哈！老師，縮成小小一團……這是適合拿來當封面的構圖呢！",
+                "哼哼～！沒有獨家新聞的話，只要做一個就行了！"
             ],
             Korean: [
-                "좆까, 경비 없이 잡았어!",
-                "이렇게 꼬여서, 이 프레임은 표지판에 딱 맞아요!",
-                "스쿠프가 없으면 하나만 만들어야 돼!"
-            ]
+                "후훗! 빈틈 발견! 셔터찬스!",
+                "아핫! 선생님, 작게 웅크려선……. 이건 표지에 딱 맞는 구도네요!",
+                "훗후웅! 특종감이 없으면 만들면 되는 법!"
+            ],
+            Thai: ["ฮุฮุ! ได้โอกาสแล้ว! กดชัตเตอร์!","อ๊ะ! คุณครู ขดตัวเล็กเชียว... อันนี้เป็นองค์ประกอบภาพ ที่เหมาะกับหน้าปกสุดๆ เลยค่ะ!","ฮุฮุฮุ! ถ้าไม่มีสกู๊ปพิเศษ ก็สร้างขึ้นมาเองได้ค่ะ!"]
         }
     },
     {
@@ -97,9 +99,9 @@ const AUDIO_DETAIL = [
                 "文字通り一銭もかけずにおいしい場面になりましたね！"
             ],
             English: [
-                "Tsk, tsk, tsk, tsk~! Too naive!",
-                "What I dropped was just the cap of this!",
-                "Literally getting a juicy scene without spending a single penny!"
+                "Tsk, tsk, tsk, tsk, tsk! You're too naive!",
+                "What I dropped was this bottle cap!",
+                "I quite literally staged a rare scene without spending a single dime!"
             ],
             Chinese: [
                 "啧啧啧啧啧～！太天真了！",
@@ -108,14 +110,15 @@ const AUDIO_DETAIL = [
             ],
             TraditionalChinese: [
                 "嘖嘖嘖嘖嘖～！太天真了！",
-                "掉的是這個的蓋子！",
-                "真是字面意思上的不花一分錢就得到了美味的場面呢！"
+                "掉下去的是這個的瓶蓋！",
+                "名副其實沒花半毛錢就換來了精彩的場面呢！"
             ],
             Korean: [
-                "너무 순진해!",
-                "제가 떨어뜨린 건 이 뚜껑이에요!",
-                "말 그대로 1센트도 쓰지 않고 쥬스한 장면을 찍는 거야!"
-            ]
+                "칫칫칫칫치-! 순진하시군요!",
+                "떨어뜨린건 이 병뚜껑 이랍니다!",
+                "말 그대로, 동전 한 닢 안 쓰고 귀한 장면을 연출했네요!"
+            ],
+            Thai: ["แหมๆๆๆๆ! ใสซื่อจริงๆ นะคะ!","ของที่ทำตก คือฝาขวดนี้ต่างหากค่ะ!","อย่างที่ว่าเลยค่ะ ไม่ได้ใช้เงินสักเหรียญ ก็สร้างภาพล้ำค่าออกมาได้เลยนะคะ!"]
         }
     },
     {
@@ -126,9 +129,9 @@ const AUDIO_DETAIL = [
                 "あれ、どうしました？目をそらして……。"
             ],
             English: [
-                "An uninteresting Sensei gets sentenced to 'Imprisonment Under the Table'!",
-                "Though if you tell me a far more juicy scoop, it's not like I can't let you out, you know?",
-                "Huh? What's wrong? Why are you looking away..."
+                "Boring Sensei is now sentenced to confinement under the table!",
+                "Maybe I'll let you out if you tell me an interesting secret.",
+                "Hm? Are you okay? Why won't you look at me...?"
             ],
             Chinese: [
                 "无趣的老师要处以“桌底禁闭之刑”！",
@@ -136,15 +139,16 @@ const AUDIO_DETAIL = [
                 "哎呀，怎么了？移开视线……"
             ],
             TraditionalChinese: [
-                "無趣的老師要處以“桌底禁閉之刑”！",
-                "要是提供更有趣的素材給我，也不是不能放了你哦？",
-                "哎呀，怎麼了？移開視線……"
+                "不有趣的老師要被處以「關在桌子底下之刑」！",
+                "要是你告訴我更有趣的題材，我也不是不能放你出來哦？",
+                "咦，怎麼了嗎？為什麼移開視線……"
             ],
             Korean: [
-                "흥미 없는 선생님에게 '제탁 아래의 감옥'을 선고합니다!",
-                "하지만 좀 더 정화로운 이야기를 해줘서 난 널 내버려 둘 수 없어",
-                "뭐가 문제야? 왜 멀리 쳐다보고 있어?"
-            ]
+                "재미없는 선생님은 '테이블 밑에 가두기형'에 처합니다!",
+                "좀 더 재미있는 비밀을 알려주시면 풀어드릴지도오-?",
+                "응? 괜찮으세요? 눈도 피하시고……."
+            ],
+            Thai: ["คุณครูที่ทำตัวไม่สนุก ต้องรับโทษ 'ขังใต้โต๊ะ' ค่ะ!","ถ้าบอกความลับที่สนุกกว่านี้ ฉันอาจยอมปล่อยให้ก็ได้นะคะ?","หืม? เป็นอะไรหรือเปล่าคะ? หลบสายตาด้วย..."]
         }
     },
     {
@@ -155,9 +159,9 @@ const AUDIO_DETAIL = [
                 "って、これ……！"
             ],
             English: [
-                "The interview is still ongoing! Look straight at me properly!",
-                "Why won't you look over here~?",
-                "Wait... this is...!"
+                "We're in an interview! You need to look at me!",
+                "Why don't you want to look?",
+                "Ah! This...!"
             ],
             Chinese: [
                 "还在采访中哦！请好好看着我！",
@@ -165,15 +169,16 @@ const AUDIO_DETAIL = [
                 "等等，这是……！"
             ],
             TraditionalChinese: [
-                "還在採訪中哦！請好好看著我！",
-                "為什麼不看著我啊？",
-                "等等，這是……！"
+                "還在訪問中哦！請好好看著這邊！",
+                "為什麼不看我這邊呢～？",
+                "啊，這個……！"
             ],
             Korean: [
-                "인터뷰는 계속 진행 중이야",
-                "왜 여기 보지 않나요~?",
-                "잠깐... 이건..."
-            ]
+                "아직 인터뷰 중이에요! 제대로 여기 봐 주셔야죠!",
+                "왜 여기 봐주지 않으시는 거예요오?",
+                "앗, 이거……!"
+            ],
+            Thai: ["ยังอยู่ระหว่างสัมภาษณ์ค่ะ! ต้องมองตรงมาทางนี้สิคะ!","ทำไมถึงไม่มอง มาทางนี้ล่ะคะ?","อ๊ะ นี่มัน...!"]
         }
     },
     {
@@ -184,9 +189,9 @@ const AUDIO_DETAIL = [
                 "出るのもダメ！じっとしててください！"
             ],
             English: [
-                "Hyaaaaaah!",
-                "W-Wait! You can't look!",
-                "Don't try to crawl out either! Just stay completely still!"
+                "Kyaaah!",
+                "Don't look!",
+                "Don't come out! Stay right there!"
             ],
             Chinese: [
                 "呀啊啊啊！",
@@ -195,14 +200,15 @@ const AUDIO_DETAIL = [
             ],
             TraditionalChinese: [
                 "呀啊啊啊！",
-                "等下！不準看的啦！",
-                "也不許出去！老實呆在這裡別動！"
+                "等一下！不可以看！",
+                "也不准出來！請乖乖待著別動！"
             ],
             Korean: [
-                "맙소사!",
-                "잠깐, 안 봐!",
-                "내버려두지 마, 가만히 있어!"
-            ]
+                "꺄아아앗!",
+                "보! 보면 안돼요!",
+                "나오면 안 돼! 가만히 있어요!"
+            ],
+            Thai: ["ว้ายยย!","หะ! ห้ามมองนะคะ!","ห้ามออกมาด้วย! อยู่นิ่งๆ เลยค่ะ!"]
         }
     }
 ];
@@ -327,7 +333,7 @@ function playVoiceline() {
 			track.play().catch(finish);
 
 			if (dialogBox) {
-				textbox.textContent = dialog[window.selectedLanguage][index];
+				textbox.textContent = getSubtitleText(dialog, window.selectedLanguage, index);
 				textbox.style.opacity = 1;
 			}
 		},
@@ -502,6 +508,16 @@ function setMouse(event) {
 	return { x: ax - canvas.width * positionX, y: ay - canvas.height * positionY };
 }
 
+function getSubtitleText(dialog, language, index) {
+	let text = dialog?.[language]?.[index];
+	if (text == null && language === 'Thai') {
+		language = 'English';
+		text = dialog?.[language]?.[index];
+	}
+	textbox.lang = subtitleLocales[language];
+	return text ?? "";
+}
+
 function updateSubtitleLanguage() {
 	let language = subtitleLanguagePreference;
 	if (language === 'auto') {
@@ -515,6 +531,8 @@ function updateSubtitleLanguage() {
 			language = 'Japanese';
 		} else if (primary === 'ko' || primary === 'korean' || primary === 'koreana') {
 			language = 'Korean';
+		} else if (primary === 'th' || primary === 'thai') {
+			language = 'Thai';
 		} else {
 			language = 'English';
 		}
@@ -524,7 +542,7 @@ function updateSubtitleLanguage() {
 	window.selectedLanguage = language;
 	textbox.lang = subtitleLocales[language];
 	const clip = currentTracks.at(-1);
-	if (dialogBox && clip) textbox.textContent = clip.dialog[language][clip.index];
+	if (dialogBox && clip) textbox.textContent = getSubtitleText(clip.dialog, language, clip.index);
 }
 
 function init() {
